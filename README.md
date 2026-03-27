@@ -1,3 +1,5 @@
 # titanic-ml
 Using RandomForestClassifier from sklearn to predict whether a passenger survived the Titanic disaster. Features used include passenger class, gender, age, family size, fare, and port of embarkation. Missing data was handled by filling Age with the median value, dropping the Cabin column due to excessive missing values, and removing the two rows with missing Embarked data. Tuned max_leaf_nodes by testing a range of values and selecting the one with the lowest error, achieving roughly 79% accuracy on the validation set.
+
+
 Added an improved Titanic model using XGBoost, sklearn Pipelines, and cross validation. Preprocessing is handled end to end through a ColumnTransformer that imputes missing values and one-hot encodes categorical features automatically. Removed PassengerId as a feature after realizing it was adding noise, which bumped cross validated accuracy from 78% to 82%. The pipeline approach makes the whole workflow cleaner and prevents data leakage compared to the baseline.
